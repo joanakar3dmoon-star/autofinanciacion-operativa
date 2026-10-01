@@ -24,8 +24,12 @@ This project is organized around the core operational flow described in the repo
 ├── src/
 │   └── autofinanciacion_operativa/
 │       ├── __init__.py
+│       ├── cli.py
 │       ├── config.py
 │       ├── runner.py
+│       ├── broker/
+│       │   ├── __init__.py
+│       │   └── alpaca_client.py
 │       ├── agents/
 │       │   ├── __init__.py
 │       │   ├── research_agent.py
@@ -40,7 +44,8 @@ This project is organized around the core operational flow described in the repo
 ├── logs/
 │   └── .gitkeep
 ├── tests/
-│   └── test_agents.py
+│   ├── test_agents.py
+│   └── test_package_import.py
 └── scripts/
     └── .gitkeep
 ```
@@ -67,6 +72,12 @@ cp .env.example .env
 
 ```bash
 python -m autofinanciacion_operativa.runner
+```
+
+5. Or use the CLI helper:
+
+```bash
+autofinanciacion --symbols AAPL,MSFT,SPY --print-json
 ```
 
 ## Safety and controls
@@ -101,4 +112,4 @@ This starter structure is designed to support a disciplined, auditable automatio
 
 ## Notes
 
-This repository currently provides a clean starter architecture and intentionally avoids live execution by default. Replace the mock logic with real broker integration and production-grade controls when you are ready to proceed to live deployment.
+This repository currently provides a clean starter architecture, a CLI entry point, and safer broker access scaffolding. It intentionally avoids live execution by default. Replace the mock logic with real broker integration and production-grade controls when you are ready to proceed to live deployment.
