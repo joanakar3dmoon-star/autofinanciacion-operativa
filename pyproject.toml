@@ -1,0 +1,15 @@
+[project]
+name = "autofinanciacion-operativa"
+version = "0.1.0"
+description = "Multi-agent portfolio automation starter"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24.0",
+  "pandas>=2.0.0",
+  "python-dotenv>=1.0.0",
+  "yfinance>=0.2.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
