@@ -1,0 +1,44 @@
+name: r3dm/titan · SEO y conversión orgánica
+
+# Sólo lee el catálogo público de TITAN. No utiliza Stripe, datos de clientes,
+# publicidad pagada, publicaciones automáticas, correos ni transferencias.
+# El cron sólo se activa al integrar el workflow en la rama principal.
+on:
+  pull_request:
+    paths:
+      - 'titan-operativa/catalog_worker.py'
+      - 'titan-operativa/test_catalog_worker.py'
+      - '.github/workflows/titan-organic-worker.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: titan-organic-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  produce-organic-assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validar aplicación del catálogo público (sin pagos)
+        run: python -m unittest discover -s titan-operativa -p test_catalog_worker.py -v
+      - name: Consultar servicios públicos reales y preparar los borradores
+        run: python titan-operativa/catalog_worker.py titan-organic-assets.json
+      - name: Guardar resultados verificables como artefacto privado de la ejecución
+        uses: actions/upload-artifact@v4
+        with:
+          name: titan-organic-drafts
+          path: titan-organic-assets.json
+          retention-days: 7
+          if-no-files-found: error
