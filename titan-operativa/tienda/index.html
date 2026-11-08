@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080e1d">
+<meta name="description" content="r3dm/titan · propuestas de marketing digital por sector, textos web, SEO, redes y emails.">
+<title>r3dm/titan · productos digitales</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:#ecf5ff;background:#060b18}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse 60% 25% at 80% 0,#103a5e88,transparent),linear-gradient(170deg,#070e1b,#121927 70%,#090b1c);min-height:100vh}
+header,main,footer{max-width:1160px;margin:auto;padding:26px 20px}header{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid #a7cfff24}
+.wordmark{font-size:clamp(1.3rem,4vw,1.8rem);letter-spacing:-.05em;font-weight:750}.wordmark strong{color:#64daf4}
+a{color:#a6eefa}header a{font-size:.9rem;text-decoration:none}a:hover{text-decoration:underline}
+.hero{padding:54px 0 35px;max-width:780px}.eyebrow{font-size:.78rem;letter-spacing:.19em;color:#75dbe9;text-transform:uppercase;font-weight:700}
+h1{font-size:clamp(2.3rem,5vw,4rem);letter-spacing:-.055em;line-height:1.08;margin:14px 0 20px}.lead{color:#b7c7d7;font-size:1.09rem;line-height:1.72}
+.status{padding:13px 16px;border:1px solid #6eb0c655;border-radius:12px;color:#bad9e6;background:#0a192c9a;font-size:.88rem}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:25px 0}
+input,select{background:#132236;color:#ecf8ff;border:1px solid #52708b;border-radius:10px;padding:12px 15px;font:inherit;min-width:165px}
+input{flex:2;min-width:240px}select{flex:1}input:focus,select:focus,a:focus-visible{outline:3px solid #62d5ff;outline-offset:2px}
+small{color:#8fa9bc}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,295px),1fr));gap:17px}
+article{border:1px solid #42617f80;background:linear-gradient(150deg,#183048de,#0e1a2bdd);border-radius:20px;padding:23px;box-shadow:0 10px 36px #0005}
+article .tag{color:#84e4f7;font-size:.76rem;text-transform:uppercase;letter-spacing:.09em}
+h2{font-size:1.22rem;line-height:1.36;margin:14px 0;letter-spacing:-.025em}
+p{line-height:1.55;color:#bdcede}ul{color:#c9d6e2;padding-left:21px;line-height:1.5}li{margin:8px 0}
+.action{display:inline-flex;margin-top:12px;border:1px solid #68deee;background:#123e57;color:#f1feff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:650}
+.notice{color:#e5d8aa;font-size:.84rem}#count{color:#89dded}
+footer{margin-top:60px;border-top:1px solid #48617a66;color:#91a8b9;font-size:.85rem;line-height:1.5}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="wordmark">r3dm/<strong>titan</strong></div>
+<a href="https://r3dmtitan.com/servicios" rel="noopener">Tienda de servicios actual</a>
+</header>
+<main>
+<section class="hero">
+<div class="eyebrow">marketing digital · proyectos online</div>
+<h1>Soluciones de marketing adaptables a tu sector.</h1>
+<p class="lead">Ideas y paquetes de trabajo para webs, visibilidad SEO, publicaciones y comunicación comercial. Cada ficha señala qué incluye y qué información requiere antes de su entrega.</p>
+<p class="status">Catálogo de propuestas en preparación. El pago de estos nuevos packs aún no está conectado. Los servicios actualmente contratables están en <a href="https://r3dmtitan.com/servicios" rel="noopener">r3dmtitan.com/servicios</a>.</p>
+</section>
+<div class="filters">
+<label for="search">Buscar sector o servicio</label>
+<input id="search" type="search" placeholder="Ej. talleres, SEO, restaurantes" autocomplete="off">
+<label for="type">Tipo</label>
+<select id="type"><option value="">Todos los formatos</option><option value="landing">Textos web</option><option value="seo">SEO</option><option value="redes">Redes sociales</option><option value="emails">Emails</option></select>
+</div>
+<p id="count" aria-live="polite">Cargando fichas verificables…</p>
+<div id="products" class="products" aria-live="polite"></div>
+<p id="loadingerror" role="alert" hidden>No hay datos del catálogo disponibles. Consulta la tienda actual.</p>
+</main>
+<footer>r3dm/titan · Negocio digital independiente. Los borradores no son ventas ni resultados comerciales garantizados. No se envían comunicaciones automáticas ni se generan gastos desde esta página.</footer>
+<script>
+"use strict";
+const region=document.getElementById("products"),count=document.getElementById("count");
+const q=document.getElementById("search"),kind=document.getElementById("type");
+let items=[];
+function el(tag,txt,klass){const n=document.createElement(tag);if(txt!==undefined)n.textContent=txt;if(klass)n.className=klass;return n;}
+function render(){
+ region.replaceChildren();
+ const search=q.value.toLocaleLowerCase("es").trim();
+ const selected=kind.value;
+ const list=items.filter(p=>(!selected||p.format===selected)&&(!search||[p.title,p.sector,p.description].join(" ").toLocaleLowerCase("es").includes(search)));
+ for(const p of list.slice(0,32)){
+   const card=el("article");
+   card.append(el("div",p.format,"tag"),el("h2",p.title),el("p",p.description));
+   const preview=el("ul");
+   for(const s of (p.sample_content||[]).slice(0,3))preview.append(el("li",s));
+   card.append(preview,el("p","Producto en preparación · Precio y compra todavía no disponibles.","notice"));
+   const link=el("a","Consultar servicios actuales","action");link.href="https://r3dmtitan.com/servicios";link.rel="noopener";
+   card.append(link);region.append(card);
+ }
+ count.textContent=list.length+" propuestas encontradas · "+Math.min(list.length,32)+" mostradas";
+}
+q.addEventListener("input",render);kind.addEventListener("change",render);
+fetch("./catalog.json",{cache:"no-store"})
+.then(r=>{if(!r.ok)throw new Error("catalog missing");return r.json();})
+.then(data=>{if(data.schema!=="titan-marketing-catalog-v1"||!Array.isArray(data.products))throw new Error("invalid catalog");items=data.products.filter(p=>p.commercial_state==="borrador_para_revision");render();})
+.catch(()=>{count.textContent="Catálogo pendiente de sincronización";document.getElementById("loadingerror").hidden=false;});
+</script>
+</body>
+</html>

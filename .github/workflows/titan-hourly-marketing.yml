@@ -1,0 +1,74 @@
+name: TITAN · 4 productos marketing por hora
+
+# Se producen 4 fichas de producto por hora; sin usar IA de pago, enviar
+# mensajes, publicar anuncios o crear enlaces de cobro.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'titan-operativa/product_pipeline.py'
+      - 'titan-operativa/test_product_pipeline.py'
+      - 'titan-operativa/tienda/index.html'
+      - '.github/workflows/titan-hourly-marketing.yml'
+  pull_request:
+    paths:
+      - 'titan-operativa/product_pipeline.py'
+      - 'titan-operativa/test_product_pipeline.py'
+      - '.github/workflows/titan-hourly-marketing.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '23 * * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: titan-hourly-marketing-main
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pruebas de 4 productos y multitareas sin costes
+        run: python -m unittest discover -s titan-operativa -p test_product_pipeline.py -v
+      - name: Comprobar sintaxis Python
+        run: python -m py_compile titan-operativa/product_pipeline.py
+
+  produce-hourly-products:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Crear 4 fichas comerciales y 20 multitareas verificables
+        run: |
+          python titan-operativa/product_pipeline.py \
+            --hour "$(date -u '+%Y-%m-%dT%H:00:00+00:00')" \
+            --root titan-operativa/tienda
+      - name: Versionar solo el catálogo público de borradores y el plan sin datos personales
+        run: |
+          git config user.name "r3dm-titan-factoria[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add titan-operativa/tienda/catalog.json titan-operativa/tienda/tasks.json
+          if git diff --cached --quiet; then
+            echo "El intervalo horario ya está procesado. No se crean duplicados."
+          else
+            git commit -m "chore(titan): four marketing product briefs and multitasks for current UTC hour"
+            git push origin HEAD:main
+          fi
