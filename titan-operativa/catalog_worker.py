@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import re
+from decimal import Decimal
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -70,14 +71,17 @@ def validate_catalog(catalog: object) -> dict:
             raise ValueError("nombre producto incorrecto")
         if not isinstance(description, str) or len(description) > 1000:
             raise ValueError("descripción producto incorrecta")
-        if isinstance(amount, bool) or not isinstance(amount, (int, float)) or amount < 0 or amount > 1_000_000:
+        if isinstance(amount, bool) or not isinstance(amount, (int, float)):
             raise ValueError("precio no válido")
-        if round(amount * 100) != amount * 100:
+        price = Decimal(str(amount))
+        if not price.is_finite() or price < 0 or price > 1_000_000:
+            raise ValueError("precio no válido")
+        if price * 100 != (price * 100).to_integral_value():
             raise ValueError("precio contiene fracciones de céntimo")
         seen.add(product_id)
         products.append({
             "id": product_id, "titulo": title.strip(),
-            "descripcion": description.strip(), "precio_centimos": int(round(amount * 100)),
+            "descripcion": description.strip(), "precio_centimos": int(price * 100),
         })
     return {"website": catalog["website"], "products": products}
 
