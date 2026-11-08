@@ -1,13 +1,22 @@
-"""Planificador de autoinversión del negocio TITAN. No transfiere fondos."""
+"""Tesorería r3dm/titan: pagar costes con ingresos y reinvertir solo lo autorizado.
+
+Sin trading, criptomonedas, transferencias, cargos ni retiradas.
+Todas las cantidades representan céntimos EUR.
+"""
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 
 
+def _euros_cents(name: str, value: int) -> None:
+    if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+        raise ValueError(f"{name} debe ser entero no negativo en céntimos")
+
+
 @dataclass(frozen=True)
 class ProviderBalance:
-    """Saldo disponible confirmado por un proveedor autorizado."""
+    """Saldo confirmado por API autenticada, no una cifra de formulario."""
     provider: str
     available_cents: int
     observed_at: datetime
@@ -21,10 +30,9 @@ class ProviderBalance:
             raise ValueError("solo se consolidan EUR")
         if not self.livemode:
             raise ValueError("el saldo procede de pruebas, no de dinero real")
-        if isinstance(self.available_cents, bool) or not isinstance(self.available_cents, int) or self.available_cents < 0:
-            raise ValueError("saldo disponible no válido")
+        _euros_cents("available_cents", self.available_cents)
         if self.observed_at.tzinfo is None or now.tzinfo is None:
-            raise ValueError("fechas UTC con zona horaria obligatorias")
+            raise ValueError("fechas con zona horaria obligatorias")
         if self.observed_at > now + timedelta(minutes=1):
             raise ValueError("la observación tiene fecha futura")
         if now - self.observed_at > max_age:
@@ -33,23 +41,23 @@ class ProviderBalance:
 
 @dataclass(frozen=True)
 class OperatingPolicy:
-    """Las cantidades son céntimos de euro, jamás floats."""
+    """Límites aprobados por titular. Por defecto, gasto y reinversión cero."""
     tax_reserve_cents: int = 0
     refund_reserve_cents: int = 0
-    unpaid_obligations_cents: int = 0
+    unpaid_obligations_cents: int = 0  # facturas ya comprometidas: reserva, no gastar de nuevo
     pending_outbound_cents: int = 0
     minimum_cash_buffer_cents: int = 0
+    requested_new_operating_expenses_cents: int = 0  # propuesta de nuevos costes reales
     daily_limit_cents: int = 0
     already_spent_today_cents: int = 0
     single_operation_limit_cents: int = 0
-    reinvestment_share_basis_points: int = 0  # 10000 = 100 %
+    reinvestment_share_basis_points: int = 0  # elegido por propietario: 0..10000
 
     def validate(self) -> None:
         for name, value in vars(self).items():
-            if isinstance(value, bool) or not isinstance(value, int) or value < 0:
-                raise ValueError(f"{name} debe ser un entero no negativo")
+            _euros_cents(name, value)
         if self.reinvestment_share_basis_points > 10000:
-            raise ValueError("proporción máxima 100 %")
+            raise ValueError("proporción de reinversión máxima 100 %")
 
 
 @dataclass(frozen=True)
@@ -57,27 +65,35 @@ class SpendingPlan:
     total_verified_available_cents: int
     reserved_cents: int
     usable_after_reserves_cents: int
-    maximum_proposed_reinvestment_cents: int
-    funds_transferred_cents: int = 0  # Este módulo nunca mueve dinero
+    titan_reconciled_cash_limit_cents: int
+    proposed_operating_expenses_cents: int
+    proposed_reinvestment_cents: int
+    remaining_unallocated_cents: int
+    funds_transferred_cents: int = 0  # este módulo jamás mueve fondos
 
 
 def plan_reinvestment(
     balances: list[ProviderBalance],
     policy: OperatingPolicy,
     *,
+    titan_reconciled_cash_limit_cents: int,
     now: datetime | None = None,
     max_age: timedelta = timedelta(minutes=15),
 ) -> SpendingPlan:
-    """Plan conservador: ninguna estimación de ingresos, solo saldos LIVE recientes.
+    """Propone primero cubrir costes y después reinvertir un % del resto.
 
-    No llamar con saldos recibidos desde formularios: los adaptadores de proveedores
-    deben obtenerlos por canal autenticado. Si falta uno, se excluye por completo.
-    Los movimientos entre proveedores aún pendientes se descuentan en policy.
+    El límite TITAN debe proceder de su libro mayor de cobros conciliados y
+    egresos reales, NO del balance global de Stripe compartido con otros negocios,
+    de un formulario, ni de facturas aún no cobradas. No usar una transferencia
+    Stripe→banco simultáneamente en ambos balances; deduplicar previamente.
+    Si falta evidencia del libro mayor, pasar 0 (resultado sin gasto).
+    No ejecuta pagos: toda transferencia requiere autorización específica aparte.
     """
     now = now or datetime.now(timezone.utc)
     if now.tzinfo is None or max_age <= timedelta(0):
         raise ValueError("hora y antigüedad deben ser válidas")
     policy.validate()
+    _euros_cents("titan_reconciled_cash_limit_cents", titan_reconciled_cash_limit_cents)
     seen: set[str] = set()
     total = 0
     for balance in balances:
@@ -95,13 +111,28 @@ def plan_reinvestment(
         + policy.pending_outbound_cents
         + policy.minimum_cash_buffer_cents
     )
-    usable = max(0, total - reserve)
-    allocated = usable * policy.reinvestment_share_basis_points // 10000
+    free_provider_cash = max(0, total - reserve)
+    usable = min(free_provider_cash, titan_reconciled_cash_limit_cents)
     daily_remaining = max(0, policy.daily_limit_cents - policy.already_spent_today_cents)
-    proposal = min(allocated, daily_remaining, policy.single_operation_limit_cents)
+    proposed_operating = min(
+        usable,
+        policy.requested_new_operating_expenses_cents,
+        daily_remaining,
+        policy.single_operation_limit_cents,
+    )
+    after_costs = usable - proposed_operating
+    reinvestment_target = after_costs * policy.reinvestment_share_basis_points // 10000
+    proposed_reinvestment = min(
+        reinvestment_target,
+        max(0, daily_remaining - proposed_operating),
+        policy.single_operation_limit_cents,
+    )
     return SpendingPlan(
         total_verified_available_cents=total,
         reserved_cents=reserve,
         usable_after_reserves_cents=usable,
-        maximum_proposed_reinvestment_cents=proposal,
+        titan_reconciled_cash_limit_cents=titan_reconciled_cash_limit_cents,
+        proposed_operating_expenses_cents=proposed_operating,
+        proposed_reinvestment_cents=proposed_reinvestment,
+        remaining_unallocated_cents=after_costs - proposed_reinvestment,
     )
