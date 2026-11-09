@@ -1,123 +1,123 @@
 {
-  "hour_utc": "2026-11-09T11:00:00+00:00",
+  "hour_utc": "2026-11-09T22:00:00+00:00",
   "new_products": 4,
   "tasks": [
     {
-      "product_id": "titan-landing-00035-jardineria",
+      "product_id": "titan-landing-00046-instaladores",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00035-jardineria",
+      "product_id": "titan-landing-00046-instaladores",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00035-jardineria",
+      "product_id": "titan-landing-00046-instaladores",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00035-jardineria",
+      "product_id": "titan-landing-00046-instaladores",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-landing-00035-jardineria",
+      "product_id": "titan-landing-00046-instaladores",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-seo-00035-jardineria",
+      "product_id": "titan-seo-00046-instaladores",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00035-jardineria",
+      "product_id": "titan-seo-00046-instaladores",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00035-jardineria",
+      "product_id": "titan-seo-00046-instaladores",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00035-jardineria",
+      "product_id": "titan-seo-00046-instaladores",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-seo-00035-jardineria",
+      "product_id": "titan-seo-00046-instaladores",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-redes-00035-jardineria",
+      "product_id": "titan-redes-00046-instaladores",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00035-jardineria",
+      "product_id": "titan-redes-00046-instaladores",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00035-jardineria",
+      "product_id": "titan-redes-00046-instaladores",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00035-jardineria",
+      "product_id": "titan-redes-00046-instaladores",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-redes-00035-jardineria",
+      "product_id": "titan-redes-00046-instaladores",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-emails-00035-jardineria",
+      "product_id": "titan-emails-00046-instaladores",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00035-jardineria",
+      "product_id": "titan-emails-00046-instaladores",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00035-jardineria",
+      "product_id": "titan-emails-00046-instaladores",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00035-jardineria",
+      "product_id": "titan-emails-00046-instaladores",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-emails-00035-jardineria",
+      "product_id": "titan-emails-00046-instaladores",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
