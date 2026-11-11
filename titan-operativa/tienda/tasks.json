@@ -1,123 +1,123 @@
 {
-  "hour_utc": "2026-11-11T01:00:00+00:00",
+  "hour_utc": "2026-11-11T07:00:00+00:00",
   "new_products": 4,
   "tasks": [
     {
-      "product_id": "titan-landing-00073-artesania",
+      "product_id": "titan-landing-00079-informaticos",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00073-artesania",
+      "product_id": "titan-landing-00079-informaticos",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00073-artesania",
+      "product_id": "titan-landing-00079-informaticos",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00073-artesania",
+      "product_id": "titan-landing-00079-informaticos",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-landing-00073-artesania",
+      "product_id": "titan-landing-00079-informaticos",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-seo-00073-artesania",
+      "product_id": "titan-seo-00079-informaticos",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00073-artesania",
+      "product_id": "titan-seo-00079-informaticos",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00073-artesania",
+      "product_id": "titan-seo-00079-informaticos",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00073-artesania",
+      "product_id": "titan-seo-00079-informaticos",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-seo-00073-artesania",
+      "product_id": "titan-seo-00079-informaticos",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-redes-00073-artesania",
+      "product_id": "titan-redes-00079-informaticos",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00073-artesania",
+      "product_id": "titan-redes-00079-informaticos",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00073-artesania",
+      "product_id": "titan-redes-00079-informaticos",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00073-artesania",
+      "product_id": "titan-redes-00079-informaticos",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-redes-00073-artesania",
+      "product_id": "titan-redes-00079-informaticos",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-emails-00073-artesania",
+      "product_id": "titan-emails-00079-informaticos",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00073-artesania",
+      "product_id": "titan-emails-00079-informaticos",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00073-artesania",
+      "product_id": "titan-emails-00079-informaticos",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00073-artesania",
+      "product_id": "titan-emails-00079-informaticos",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-emails-00073-artesania",
+      "product_id": "titan-emails-00079-informaticos",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
