@@ -1,123 +1,123 @@
 {
-  "hour_utc": "2026-11-12T03:00:00+00:00",
+  "hour_utc": "2026-11-12T12:00:00+00:00",
   "new_products": 4,
   "tasks": [
     {
-      "product_id": "titan-landing-00099-informaticos",
+      "product_id": "titan-landing-00108-academias",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00099-informaticos",
+      "product_id": "titan-landing-00108-academias",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00099-informaticos",
+      "product_id": "titan-landing-00108-academias",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00099-informaticos",
+      "product_id": "titan-landing-00108-academias",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-landing-00099-informaticos",
+      "product_id": "titan-landing-00108-academias",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-seo-00099-informaticos",
+      "product_id": "titan-seo-00108-academias",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00099-informaticos",
+      "product_id": "titan-seo-00108-academias",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00099-informaticos",
+      "product_id": "titan-seo-00108-academias",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00099-informaticos",
+      "product_id": "titan-seo-00108-academias",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-seo-00099-informaticos",
+      "product_id": "titan-seo-00108-academias",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-redes-00099-informaticos",
+      "product_id": "titan-redes-00108-academias",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00099-informaticos",
+      "product_id": "titan-redes-00108-academias",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00099-informaticos",
+      "product_id": "titan-redes-00108-academias",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00099-informaticos",
+      "product_id": "titan-redes-00108-academias",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-redes-00099-informaticos",
+      "product_id": "titan-redes-00108-academias",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-emails-00099-informaticos",
+      "product_id": "titan-emails-00108-academias",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00099-informaticos",
+      "product_id": "titan-emails-00108-academias",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00099-informaticos",
+      "product_id": "titan-emails-00108-academias",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00099-informaticos",
+      "product_id": "titan-emails-00108-academias",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-emails-00099-informaticos",
+      "product_id": "titan-emails-00108-academias",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
