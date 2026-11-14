@@ -1,123 +1,123 @@
 {
-  "hour_utc": "2026-11-14T06:00:00+00:00",
+  "hour_utc": "2026-11-14T14:00:00+00:00",
   "new_products": 4,
   "tasks": [
     {
-      "product_id": "titan-landing-00150-alojamientos",
+      "product_id": "titan-landing-00158-turismo",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00150-alojamientos",
+      "product_id": "titan-landing-00158-turismo",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00150-alojamientos",
+      "product_id": "titan-landing-00158-turismo",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00150-alojamientos",
+      "product_id": "titan-landing-00158-turismo",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-landing-00150-alojamientos",
+      "product_id": "titan-landing-00158-turismo",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-seo-00150-alojamientos",
+      "product_id": "titan-seo-00158-turismo",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00150-alojamientos",
+      "product_id": "titan-seo-00158-turismo",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00150-alojamientos",
+      "product_id": "titan-seo-00158-turismo",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00150-alojamientos",
+      "product_id": "titan-seo-00158-turismo",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-seo-00150-alojamientos",
+      "product_id": "titan-seo-00158-turismo",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-redes-00150-alojamientos",
+      "product_id": "titan-redes-00158-turismo",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00150-alojamientos",
+      "product_id": "titan-redes-00158-turismo",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00150-alojamientos",
+      "product_id": "titan-redes-00158-turismo",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00150-alojamientos",
+      "product_id": "titan-redes-00158-turismo",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-redes-00150-alojamientos",
+      "product_id": "titan-redes-00158-turismo",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-emails-00150-alojamientos",
+      "product_id": "titan-emails-00158-turismo",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00150-alojamientos",
+      "product_id": "titan-emails-00158-turismo",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00150-alojamientos",
+      "product_id": "titan-emails-00158-turismo",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00150-alojamientos",
+      "product_id": "titan-emails-00158-turismo",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-emails-00150-alojamientos",
+      "product_id": "titan-emails-00158-turismo",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
