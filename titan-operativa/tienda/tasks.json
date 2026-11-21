@@ -1,123 +1,123 @@
 {
-  "hour_utc": "2026-11-20T21:00:00+00:00",
+  "hour_utc": "2026-11-21T02:00:00+00:00",
   "new_products": 4,
   "tasks": [
     {
-      "product_id": "titan-landing-00309-veterinarios",
+      "product_id": "titan-landing-00314-eventos",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00309-veterinarios",
+      "product_id": "titan-landing-00314-eventos",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00309-veterinarios",
+      "product_id": "titan-landing-00314-eventos",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-landing-00309-veterinarios",
+      "product_id": "titan-landing-00314-eventos",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-landing-00309-veterinarios",
+      "product_id": "titan-landing-00314-eventos",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-seo-00309-veterinarios",
+      "product_id": "titan-seo-00314-eventos",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00309-veterinarios",
+      "product_id": "titan-seo-00314-eventos",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00309-veterinarios",
+      "product_id": "titan-seo-00314-eventos",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-seo-00309-veterinarios",
+      "product_id": "titan-seo-00314-eventos",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-seo-00309-veterinarios",
+      "product_id": "titan-seo-00314-eventos",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-redes-00309-veterinarios",
+      "product_id": "titan-redes-00314-eventos",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00309-veterinarios",
+      "product_id": "titan-redes-00314-eventos",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00309-veterinarios",
+      "product_id": "titan-redes-00314-eventos",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-redes-00309-veterinarios",
+      "product_id": "titan-redes-00314-eventos",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-redes-00309-veterinarios",
+      "product_id": "titan-redes-00314-eventos",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
     },
     {
-      "product_id": "titan-emails-00309-veterinarios",
+      "product_id": "titan-emails-00314-eventos",
       "family": "Buscadores",
       "task": "Segmentar sector y necesidad",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00309-veterinarios",
+      "product_id": "titan-emails-00314-eventos",
       "family": "Ejecutores",
       "task": "Producir estructura y muestras",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00309-veterinarios",
+      "product_id": "titan-emails-00314-eventos",
       "family": "Reinversores",
       "task": "Controlar presupuesto y no gastar",
       "status": "done"
     },
     {
-      "product_id": "titan-emails-00309-veterinarios",
+      "product_id": "titan-emails-00314-eventos",
       "family": "Cazadores",
       "task": "Revisar calidad y preparar publicación orgánica",
       "status": "review_required"
     },
     {
-      "product_id": "titan-emails-00309-veterinarios",
+      "product_id": "titan-emails-00314-eventos",
       "family": "Cerradores",
       "task": "Conectar precio aprobado, Checkout y entrega posterior al pago",
       "status": "integration_blocked"
